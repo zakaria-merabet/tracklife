@@ -1,5 +1,5 @@
 import React from "react";
-import "../../index.css"; // Ensure to import your CSS file
+import "../../index.css";
 const Landing = () => {
   return (
     <div
@@ -33,9 +33,6 @@ const Landing = () => {
 
       {/* Features Section */}
       <FeaturesSection />
-
-      {/* Testimonials */}
-      <TestimonialsSection />
 
       {/* Footer */}
       <Footer />
@@ -116,7 +113,10 @@ const HeroSection = () => (
 
 const FeaturesSection = () => (
   <div className="flex flex-col gap-10 px-4 py-10 @container">
-    <div className="flex flex-col gap-4">
+    <div
+      className="flex flex-col gap-4"
+      style={{ maxWidth: "960px", margin: "auto" }}
+    >
       <h1 className="text-[#0d141c] tracking-light text-[32px] font-bold leading-tight @[480px]:text-4xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em] max-w-[720px]">
         All your life's essentials, in one place
       </h1>
@@ -143,17 +143,6 @@ const FeaturesSection = () => (
         title="Habit Tracker"
         description="Build and maintain healthy habits with customizable trackers and progress reports."
       />
-    </div>
-
-    <div className="@container">
-      <div className="@[480px]:px-4 @[480px]:py-3">
-        <div
-          className="w-full bg-center bg-no-repeat bg-cover flex flex-col justify-end overflow-hidden bg-slate-50 @[480px]:rounded-xl min-h-[218px]"
-          style={{
-            backgroundImage: `url("https://lh3.googleusercontent.com/aida-public/AB6AXuBkniZjVEtPws9upWrSCGhn0Qr9Ft_1odq1coT6lvGkochfJOeRW6m-fLXOn44zGyFCZa9-6YiahpKz42sQaokYpCkRnIT_BraQGMbBqE4EGa4a0F5PL9V9DpRFr-bcdlJZ9Q2Q3LxH11gLXsGHun1lfFKrAjIjjRKO7Zp84zp3uB0sH4-R_lPq6WTW_JT0jRsjWQXInTvXZ_fd1cjSFtFcNP0jFIlRc7AhlDBinUp1sj609PrypOFC-TvBFGgli7-6jNtR40Q32b9A")`,
-          }}
-        />
-      </div>
     </div>
   </div>
 );
@@ -218,51 +207,6 @@ const FeatureCard = ({ icon, title, description }) => {
     </div>
   );
 };
-
-const TestimonialsSection = () => (
-  <div className="px-4 pb-10">
-    <h2 className="text-[#0d141c] text-[22px] font-bold leading-tight tracking-[-0.015em] pb-3 pt-5">
-      What our users say
-    </h2>
-
-    <div className="flex overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-      <div className="flex items-stretch p-4 gap-3 min-w-max">
-        <Testimonial
-          image="https://lh3.googleusercontent.com/aida-public/AB6AXuBRAwxhH4eK9FsFZWIGHvJEh-usdC3HoFSjfd5YvxnBn5uCmfDDFGfVw_49B6XhElsCvtHB-H0Poi_2bz74ohM7dsOcOK-OCegKCyvuk0LpGGmD940yIR0CS6e2mMfMEt7MIGf2SySxY5Lbtr3FuGY2DlXJAdPf4LFvfWd1c8OOkQiHQ-dGyho2W2ABPhSB5mROXlYyBcaBzV1hDC_ZmpOkX_z-Gpc68VYFsYNv25dy46rcf7xLC7qwa6KMcrybFsqQxNsp4nsrNkSi"
-          text="Track Life has completely transformed how I manage my goals and finances. It's intuitive and keeps me motivated."
-          author="Sophia Bennett"
-        />
-        <Testimonial
-          image="https://lh3.googleusercontent.com/aida-public/AB6AXuAfAtnATOrLjr558MVeaPN9k-_cEwfcfkdJOjTfIo6XrEjQQ2r0PMj_9PjJId2g9M8D88SzppBHNtC0FXLfN782Ni5IVMUHskQ0Apa52JOYFtoT_rjjmp1PEG5_LfGyScNO5WX5wyWqLe8kCfsGHVUsD0FfAwMB9xxFuHMoA9oKcktgFJ8JPDkWHtn6hv0BG9Oy45UNhJXZm8jTbnVGtM3W1tL2twu8pYUXgwv4uA8HGRwt7jrDuiOZQpERqkDcqNZy5FhtFNSls_gW"
-          text="I love how Track Life combines everything I need into one app. It's made staying organized so much easier."
-          author="Ethan Carter"
-        />
-        <Testimonial
-          image="https://lh3.googleusercontent.com/aida-public/AB6AXuCiMh0z6Ur7tiYTkiYPOKZsh8wqbGSydhTmsOMrZpXXXQTXgoHNlzv8sihf_rQa1bpp4rctdYaeU9d-_ug5-NhMgphJ_k4NjtS93WbCvnN8HbQtrVXyaPuaLWiWILzGMCaMrRLSf0WEyInVTupKzPDI9tIwBRs3H8rEeDnyWN6HRBx6SStv8BoKXLLRLjBC2AbtWM1TX6ELr1VE4lZ5DwnpSpW1MMin7LNvrUGzOoRmKdoukunkheHFmF8WCOgaIf2X9MmuIEjLCK3Ql"
-          text="The habit tracker is a game-changer. I've finally been able to stick to my routines thanks to Track Life."
-          author="Olivia Hayes"
-        />
-      </div>
-    </div>
-  </div>
-);
-
-const Testimonial = ({ image, text, author }) => (
-  <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-40">
-    <div
-      className="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl"
-      style={{ backgroundImage: `url(${image})` }}
-    />
-    <div>
-      <p className="text-[#0d141c] text-base font-medium leading-normal">
-        {text}
-      </p>
-      <p className="text-[#49739c] text-sm font-normal leading-normal mt-1">
-        {author}
-      </p>
-    </div>
-  </div>
-);
 
 const Footer = () => (
   <footer className="flex justify-center border-t border-[#e7edf4]">
